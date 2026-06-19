@@ -20,8 +20,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				display: ['Pacifico', 'cursive'],
-				sans: ['Rubik', 'sans-serif']
+				display: ['Joti One', 'cursive'],
+				sans: ['Nunito', 'sans-serif']
 			},
 			colors: {
 				owl: {
