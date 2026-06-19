@@ -100,7 +100,7 @@ const Index = () => {
             <span className="inline-block px-4 py-1.5 rounded-full bg-owl-lime text-slate-800 text-sm font-semibold mb-5">
               Натуральная косметика ручной работы
             </span>
-            <h1 className="font-display text-4xl md:text-6xl text-owl-pink leading-tight mb-5">
+            <h1 className="font-display text-3xl md:text-5xl text-owl-pink leading-snug mb-5">
               Превращай ванну<br />в маленькое чудо
             </h1>
             <p className="text-lg text-slate-600 mb-8 max-w-md">
@@ -133,8 +133,8 @@ const Index = () => {
             </div>
           </div>
           <div className="order-1 md:order-2">
-            <span className="font-display text-owl-pink text-xl">О бренде</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-5">Немного сумасшедшие, очень заботливые</h2>
+            <span className="font-display text-owl-pink text-2xl">О бренде</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2 mb-5">Немного сумасшедшие, очень заботливые</h2>
             <p className="text-slate-600 mb-4">
               «Чокнутая СОВА» родилась из любви к уютным вечерам и заботе о себе. Мы варим бомбочки, мешаем скрабы и заливаем свечи вручную — небольшими партиями, чтобы каждый продукт был идеальным.
             </p>
@@ -149,8 +149,8 @@ const Index = () => {
       <section id="catalog" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="font-display text-owl-pink text-xl">Каталог</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">Наши творения</h2>
+            <span className="font-display text-owl-pink text-2xl">Каталог</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Наши творения</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {PRODUCTS.map((p) => (
@@ -162,8 +162,8 @@ const Index = () => {
                   </span>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-1">{p.title}</h3>
-                  <p className="text-sm text-slate-500 mb-4">{p.desc}</p>
+                  <h3 className="text-lg font-bold mb-1">{p.title}</h3>
+                  <p className="text-base text-slate-500 mb-4">{p.desc}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-2xl font-extrabold text-owl-pink">{p.price}</span>
                     <Button size="sm" className="bg-owl-pink hover:bg-owl-pink/90 text-white rounded-full">
@@ -181,8 +181,8 @@ const Index = () => {
       <section id="benefits" className="py-20 bg-owl-blue/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="font-display text-owl-pink text-xl">Преимущества</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">Почему нас любят</h2>
+            <span className="font-display text-owl-pink text-2xl">Преимущества</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Почему нас любят</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {BENEFITS.map((b) => (
@@ -190,7 +190,7 @@ const Index = () => {
                 <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-owl-lime flex items-center justify-center">
                   <Icon name={b.icon} size={30} className="text-slate-800" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">{b.title}</h3>
+                <h3 className="font-bold text-base mb-2">{b.title}</h3>
                 <p className="text-sm text-slate-500">{b.desc}</p>
               </div>
             ))}
@@ -202,8 +202,8 @@ const Index = () => {
       <section id="reviews" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <span className="font-display text-owl-pink text-xl">Отзывы</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">Что говорят клиенты</h2>
+            <span className="font-display text-owl-pink text-2xl">Отзывы</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Что говорят клиенты</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {REVIEWS.map((r) => (
@@ -230,8 +230,8 @@ const Index = () => {
       <section id="faq" className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
-            <span className="font-display text-owl-pink text-xl">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-2">Частые вопросы</h2>
+            <span className="font-display text-owl-pink text-2xl">FAQ</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Частые вопросы</h2>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {FAQ.map((f, i) => (
@@ -250,8 +250,8 @@ const Index = () => {
       <section id="contacts" className="py-20 bg-owl-pink/10">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="font-display text-owl-pink text-xl">Контакты</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-6">Свяжитесь с нами</h2>
+            <span className="font-display text-owl-pink text-2xl">Контакты</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2 mb-6">Свяжитесь с нами</h2>
             <div className="space-y-4">
               {[
                 { icon: 'Phone', label: '+7 (900) 123-45-67' },
