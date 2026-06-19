@@ -12,6 +12,7 @@ const IMG = {
   bath: 'https://cdn.poehali.dev/projects/d0a5b1ea-ac76-439f-8a91-79050f32c235/files/4ac4f932-5ea5-4075-8b5c-b179f6856868.jpg',
   scrub: 'https://cdn.poehali.dev/projects/d0a5b1ea-ac76-439f-8a91-79050f32c235/files/eb2554a5-d87d-4a79-a610-1541f3a57d2b.jpg',
   candle: 'https://cdn.poehali.dev/projects/d0a5b1ea-ac76-439f-8a91-79050f32c235/files/36af09b4-2716-4f4d-968d-0cb9eed1bdc4.jpg',
+  logo: 'https://cdn.poehali.dev/projects/d0a5b1ea-ac76-439f-8a91-79050f32c235/bucket/50920d05-9247-4557-a42b-5375c9948fdc.png',
 };
 
 const NAV = [
@@ -62,9 +63,8 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-white/70 border-b border-owl-pink/20">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo('hero')} className="flex items-center gap-2">
-            <span className="text-3xl">🦉</span>
-            <span className="font-display text-xl text-owl-pink leading-none">Чокнутая СОВА</span>
+          <button onClick={() => scrollTo('hero')} className="flex items-center">
+            <img src={IMG.logo} alt="Family Wick & Чокнутая СОВА" className="h-11 w-auto" />
           </button>
           <nav className="hidden md:flex items-center gap-7">
             {NAV.map((n) => (
@@ -283,9 +283,8 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-10">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">🦉</span>
-            <span className="font-display text-lg text-owl-pink">Чокнутая СОВА</span>
+          <div className="bg-white rounded-2xl px-4 py-2">
+            <img src={IMG.logo} alt="Family Wick & Чокнутая СОВА" className="h-10 w-auto" />
           </div>
           <p className="text-sm text-slate-400">© 2026 Чокнутая СОВА. Сделано с любовью 💛</p>
           <div className="flex gap-3">
