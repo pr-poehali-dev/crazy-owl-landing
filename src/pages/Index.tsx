@@ -144,7 +144,7 @@ const Index = () => {
             <div className="flex gap-6">
               {[
                 { value: '5+', label: 'лет вместе' },
-                { value: '3 000+', label: 'довольных клиентов' },
+                { value: '3 000+', label: 'довольных покупателей' },
                 { value: '100%', label: 'ручная работа' },
               ].map((s) => (
                 <div key={s.label}>
