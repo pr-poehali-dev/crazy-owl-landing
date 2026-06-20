@@ -18,6 +18,8 @@ const IMG = {
 const NAV = [
   { id: 'about', label: 'О бренде' },
   { id: 'catalog', label: 'Каталог' },
+  { id: 'masterclass', label: 'Мастер-классы' },
+  { id: 'corporate', label: 'Корпоративам' },
   { id: 'benefits', label: 'Преимущества' },
   { id: 'reviews', label: 'Отзывы' },
   { id: 'faq', label: 'FAQ' },
@@ -48,6 +50,38 @@ const FAQ = [
   { q: 'Подходят ли средства для чувствительной кожи?', a: 'Да, наши рецептуры мягкие и гипоаллергенные. Но при склонности к аллергии советуем проверить состав на этикетке.' },
   { q: 'Как быстро вы доставляете?', a: 'Отправляем заказы в течение суток. Доставка по России занимает от 1 до 3 дней.' },
   { q: 'Можно ли заказать подарочный набор?', a: 'Конечно! У нас есть готовые наборы, а также можно собрать свой — напишите нам.' },
+];
+
+const MASTERCLASSES = [
+  {
+    type: 'online',
+    icon: 'Monitor',
+    label: 'Онлайн',
+    title: 'Онлайн мастер-класс',
+    desc: 'Делаем бомбочки для ванны вместе — из дома. Видеоурок + список ингредиентов. Подходит для любого города.',
+    duration: '2 часа',
+    price: 'от 990 ₽',
+    color: 'owl-blue',
+  },
+  {
+    type: 'offline',
+    icon: 'MapPin',
+    label: 'Офлайн',
+    title: 'Мастер-класс в студии',
+    desc: 'Приходите к нам — варим, смешиваем, создаём. Уютная атмосфера, все материалы включены, готовые изделия забираете домой.',
+    duration: '3 часа',
+    price: 'от 1 990 ₽',
+    color: 'owl-lime',
+  },
+];
+
+const CORPORATE_GIFTS = [
+  { icon: 'Rings', label: 'Свадьбы', desc: 'Бомбоньерки для гостей: персональная упаковка, ленты, открытка с именами молодожёнов' },
+  { icon: 'PartyPopper', label: 'Детские праздники', desc: 'Яркие мини-бомбочки в форме животных или звёзд — восторг детей гарантирован' },
+  { icon: 'Building2', label: 'Корпоративы', desc: 'Брендированные наборы с логотипом компании — необычный подарок для сотрудников' },
+  { icon: 'Gift', label: 'Юбилеи и события', desc: 'Тематические наборы под любой повод: день рождения, новый год, 8 марта' },
+  { icon: 'GraduationCap', label: 'Выпускные', desc: 'Памятные подарки для выпускников и учителей с тёплыми пожеланиями' },
+  { icon: 'ShoppingBag', label: 'Розничные магазины', desc: 'Поставки для магазинов подарков и сувениров — оптовые условия' },
 ];
 
 const Index = () => {
@@ -185,6 +219,70 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Masterclasses */}
+      <section id="masterclass" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="font-display text-owl-pink text-2xl">Мастер-классы</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Научись делать сама</h2>
+            <p className="text-slate-500 mt-3 max-w-xl mx-auto">Проводим мастер-классы для взрослых и детей — онлайн из любой точки России и вживую в нашей студии</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {MASTERCLASSES.map((m) => (
+              <div key={m.type} className={`rounded-3xl p-8 bg-${m.color}/30 border border-${m.color} flex flex-col gap-4`}>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                    <Icon name={m.icon} size={24} className="text-slate-800" />
+                  </div>
+                  <span className="font-display text-xl text-slate-800">{m.label}</span>
+                </div>
+                <h3 className="text-xl font-extrabold">{m.title}</h3>
+                <p className="text-slate-600 flex-1">{m.desc}</p>
+                <div className="flex items-center justify-between pt-2 border-t border-slate-200">
+                  <div className="flex items-center gap-2 text-sm text-slate-500">
+                    <Icon name="Clock" size={16} />
+                    {m.duration}
+                  </div>
+                  <span className="font-display text-2xl text-owl-pink">{m.price}</span>
+                </div>
+                <Button onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })} className="bg-owl-pink hover:bg-owl-pink/90 text-white rounded-full w-full">
+                  Записаться
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Corporate */}
+      <section id="corporate" className="py-20 bg-owl-lime/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <span className="font-display text-owl-pink text-2xl">Корпоративные подарки</span>
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2">Бомбоньерки и наборы под заказ</h2>
+            <p className="text-slate-500 mt-3 max-w-xl mx-auto">Делаем сувениры для любых событий — от свадьбы до корпоратива. Индивидуальная упаковка, брендирование, любой тираж.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {CORPORATE_GIFTS.map((g) => (
+              <div key={g.label} className="bg-white rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow flex gap-4">
+                <div className="w-12 h-12 shrink-0 rounded-2xl bg-owl-pink/15 flex items-center justify-center">
+                  <Icon name={g.icon} size={22} className="text-owl-pink" />
+                </div>
+                <div>
+                  <h3 className="font-bold mb-1">{g.label}</h3>
+                  <p className="text-sm text-slate-500">{g.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Button onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })} size="lg" className="bg-owl-pink hover:bg-owl-pink/90 text-white rounded-full px-10">
+              Обсудить заказ
+            </Button>
           </div>
         </div>
       </section>
